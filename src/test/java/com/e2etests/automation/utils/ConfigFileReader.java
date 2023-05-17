@@ -42,6 +42,8 @@ public class ConfigFileReader {
 	public String getProperties(String prop) {
 
 		String param = properties.getProperty(prop);
+		//String param = properties.getProperty("home.url");
+
 		if (param != null)
 			return param;
 		else

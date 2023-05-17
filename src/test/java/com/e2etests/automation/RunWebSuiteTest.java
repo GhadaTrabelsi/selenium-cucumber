@@ -22,8 +22,10 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 @CucumberOptions (
 	features= {"src/spec/features"},
 	plugin= {"pretty", "html:target/cucmber-report.html"},
-	tags= ("@login"),
-	//glue= {"src/test/java/com/e2etests/automation/step_definitions"}, //je le mets en commentaire car cest pas necessaire vu que la classe est visible car elle est dans le meme package 
+     //tags= "@login",
+	
+	tags= "@loginOutline",
+    //glue= {"com.e2etests.automation.step_definitions"},
 	monochrome= true,
 	snippets= CAMELCASE
 	
