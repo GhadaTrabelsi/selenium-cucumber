@@ -48,11 +48,10 @@ public class SeleniumUtils extends BasePage {
 	/**
 	 * Instanciation de common utils.
 	 */
-	public SeleniumUtils() {
-		super();
-		this.driver = Setup.getDriver();
-	}
-
+	public SeleniumUtils()  {
+	    super();
+	    this.driver = Setup.getDriver();
+	    }
 	/**
 	 * methode Locator value : to locate web element.
 	 * 
@@ -511,6 +510,35 @@ public class SeleniumUtils extends BasePage {
 		}
 
 	}
+	public long getWait(String waitType) {
+	    JSONParser parser = new JSONParser();
+
+	    try {
+	        Object obj = parser.parse(new FileReader("./src/test/resources/configs/waitConfig.json"));
+
+	        JSONArray array = (JSONArray) obj;
+	        JSONObject jsonObject = (JSONObject) array.get(0); // Supposons un seul objet JSON dans le tableau
+
+	        String waitStr = (String) jsonObject.get(waitType);
+
+	        if (waitStr != null) {
+	            return Long.parseLong(waitStr);
+	        } else {
+	            // Si le type de délai n'est pas valide, vous pouvez renvoyer une valeur par défaut ici
+	            return -1; // Ou toute autre valeur par défaut
+	        }
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	        return -1; // Valeur par défaut en cas d'erreur
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        return -1; // Valeur par défaut en cas d'erreur
+	    } catch (ParseException e) {
+	        e.printStackTrace();
+	        return -1; // Valeur par défaut en cas d'erreur
+	    }
+	}
+
 
 	/**
 	 * A list of methods for managing new tabs.

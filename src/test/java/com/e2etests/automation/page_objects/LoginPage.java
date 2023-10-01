@@ -22,8 +22,10 @@ public class LoginPage {
 	@FindBy(how = How.ID, using = "login-button")
 	public static WebElement btnLogin;
 
-	@FindBy(how = How.XPATH, using = "//span[@class='title']")
+	@FindBy(how = How.XPATH, using = "//span[@class='title']") //products
 	public static WebElement titlePage;
+	@FindBy(how = How.XPATH, using = "//h3[@data-test='error']")
+	public static WebElement msgError;
 
 	public LoginPage() {
 		PageFactory.initElements(Setup.getDriver(), this);
@@ -37,6 +39,16 @@ public class LoginPage {
 		username.sendKeys(configFileReader.getProperties("home.login"));
 		password.clear();
 		password.sendKeys(configFileReader.getProperties("home.password"));
+		btnLogin.click();
+	}
+	
+	
+	public void loginNp() {
+		Setup.getDriver().get(configFileReader.getProperties("home.url"));
+		username.clear();
+		username.sendKeys("Ghada");
+		password.clear();
+		password.sendKeys("Ghada123");
 		btnLogin.click();
 	}
 	

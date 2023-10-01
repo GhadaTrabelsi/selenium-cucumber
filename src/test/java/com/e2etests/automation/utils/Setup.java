@@ -26,7 +26,8 @@ public class Setup {
 	 */
 	@Before
 	public void setWebDriver() {
-
+//		Il vérifie si la valeur de "browser" est null. Si la propriété système "browser" 
+//		n'a pas été définie (c'est-à-dire qu'elle est null), il attribue la valeur par défaut "chrome" à la variable browser.
 		String browser = System.getProperty("browser");
 		if (browser == null) {
 			browser = "chrome";
@@ -34,19 +35,21 @@ public class Setup {
 		switch (browser) {
 
 		case "chrome":
-			System.setProperty("webdriver.http.factory", "jdk-http-client");
+			//System.setProperty("webdriver.http.factory", "jdk-http-client");
 			ChromeOptions chromeOptions = new ChromeOptions();
-			WebDriverManager.chromedriver().setup();
+//			DesiredCapabilities cap = new DesiredCapabilities();
+//			cap.setCapability("platform", "win10");
+//			chromeOptions.merge(cap);
+//			WebDriverManager.chromedriver().setup(); //==> commr ds firefox version OS qui est platform 
 			driver = new ChromeDriver(chromeOptions);
-			driver.manage().window().maximize();
 			driver.manage().window().maximize();
 
 			break;
 		case "firefox":
-			System.setProperty("webdriver.http.factory", "jdk-http-client");
+			//System.setProperty("webdriver.http.factory", "jdk-http-client");
 			FirefoxProfile profile = new FirefoxProfile();
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
-			WebDriverManager.firefoxdriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
 			firefoxOptions.setCapability("platform", Platform.WIN10);
 			firefoxOptions.setProfile(profile);
 			driver = new FirefoxDriver();
@@ -54,8 +57,8 @@ public class Setup {
 			break;
 
 		case "edge":
-			System.setProperty("webdriver.http.factory", "jdk-http-client");
-			WebDriverManager.edgedriver().setup();
+			//System.setProperty("webdriver.http.factory", "jdk-http-client");
+			//WebDriverManager.edgedriver().setup();
 			//System.setProperty("webdriver.edge.driver","src\\test\\resources\\drivers\\msedgedriver.exe");
 			driver = new EdgeDriver();
 			driver.manage().window().maximize();
@@ -72,3 +75,4 @@ public class Setup {
 	}
 
 }
+

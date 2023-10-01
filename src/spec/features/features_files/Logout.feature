@@ -1,15 +1,9 @@
-@logout
 Feature: Je souhaite tester  la deconnexion de l application Swag Labs
   ETQ utuisateur Je veux pouvoir me déconnecter de l application Swag Labs
-
-  Background: 
-    Given Je me connecte a l application
-    When Je saisi le username "standard_user"
-    When Je saisi le password "secret_sauce"
-    When Je clique sur le bouton login
-
-  @logout
+  
+@logout
   Scenario: Je souhaite tester la page deconnexion
+    Given Je me connecte à l application Swag Labs
     When Je clique sur le menu burger
     And Je clique sur logout
-    Then Je me redirige vers la page de la connexion "swag labs"
+    Then Je me redirige vers la page de la connexion "Swag Labs"

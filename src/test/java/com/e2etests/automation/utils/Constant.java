@@ -2,7 +2,7 @@ package com.e2etests.automation.utils;
 
 public class Constant {
 
-    public static final String Path_TestData = "C:\\Users\\ATTAFI\\Desktop\\Formation Automatisation\\Selenium";
+    public static final String Path_TestData = "C:\\Users\\GHADA\\Desktop\\Formation Automatisation\\Selenium";
 
     public static final String File_TestData = "DataTest.xlsx";
     

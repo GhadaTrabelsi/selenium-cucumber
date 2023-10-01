@@ -17,7 +17,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         
-        <selenium.version>4.5.0</selenium.version>
+        <selenium.version>4.11.0</selenium.version> 
         <log4jcore.version>2.17.2</log4jcore.version>
         <log4japi.version>2.17.2</log4japi.version>
         <cucumberjava.version>7.2.3</cucumberjava.version>
@@ -29,7 +29,7 @@
         <screenshot.version>1.5.4</screenshot.version>
         <jasypt.version>1.9.3</jasypt.version>
         <webdrivermanager.version>5.1.1</webdrivermanager.version>
-        <seleniumclient.version>4.8.1</seleniumclient.version>
+        <seleniumclient.version>4.11.0</seleniumclient.version>
         <apachepoi.version>3.13</apachepoi.version>
         <json.version>1.1.1</json.version>
         <junitplatform.version>1.8.1</junitplatform.version>
