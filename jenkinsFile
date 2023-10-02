@@ -8,7 +8,7 @@ pipeline {
         stage('Maven') {
           steps {
             echo 'Running from Jenkins file'
-            sh 'mvn  clean install'
+            bat 'mvn  clean install'
           }
         }
 
