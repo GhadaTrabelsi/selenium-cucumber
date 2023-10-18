@@ -16,6 +16,7 @@ public class TearDown {
 	 */
 	@After
 	public void quitDriver(Scenario scenario) {
+		org.jacoco.agent.rt.RT.getAgent().shutdown();
 		if (scenario.isFailed()) {
 			final byte[] screenshot = ((TakesScreenshot) Setup.getDriver()).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(screenshot, "image/png", "screenshot");
