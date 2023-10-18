@@ -138,6 +138,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
+      <dependency>
+    <groupId>org.jacoco</groupId>
+    <artifactId>org.jacoco.agent</artifactId>
+    <version>0.8.7</version> <!-- Remplacez la version par la dernière version disponible -->
+    <scope>test</scope>
+</dependency>
   </dependencies>
 
   <build>
