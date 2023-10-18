@@ -18,13 +18,7 @@ pipeline {
           }
         }
 
-      }
-    }
-stage('JaCoCo Code Coverage') {
-            steps {
-                sh 'mvn jacoco:report'
-            }
-           post {
+post {
    	 always {
    	 step([$class: 'JacocoPublisher',
    	   	execPattern: 'target/*.exec',
@@ -34,9 +28,11 @@ stage('JaCoCo Code Coverage') {
    	 ])
    	 }   
     	}
-        }
+
+      }
+    }
+
     }
 }
-  }
-}
+
 
