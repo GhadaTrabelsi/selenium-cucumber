@@ -26,6 +26,8 @@ public class Setup {
 	 */
 	@Before
 	public void setWebDriver() {
+		        org.jacoco.agent.rt.RT.getAgent().startup();
+
 //		Il vérifie si la valeur de "browser" est null. Si la propriété système "browser" 
 //		n'a pas été définie (c'est-à-dire qu'elle est null), il attribue la valeur par défaut "chrome" à la variable browser.
 		String browser = System.getProperty("browser");
