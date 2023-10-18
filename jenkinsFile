@@ -30,7 +30,7 @@ stage('JaCoCo Code Coverage') {
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: 'target/jacoco',
+                        reportDir: 'target',
                         reportFiles: 'jacoco-aggregate/index.html',
                     ])
                 }
